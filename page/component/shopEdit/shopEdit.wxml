@@ -1,0 +1,53 @@
+<!--page/component/shopEdit/shopEdit.wxml-->
+<view>
+    <block wx:for="{{imgJson}}" wx:key="{{index}}"> 
+     <button type="default"  id='choose{{index}}' bindtap='chooseImg' style='position:absolute;left:5%;width:30%'>更换图片</button> 
+
+    <!-- <text id='choose{{index}}' bindtap='chooseImg' style='position:absolute;color:red;border-style:solid;border-width:2px;border-color:gray'>更换图片</text> -->
+
+       <button type="default"  id='delete{{index}}' bindtap='deleteImg' style='position:absolute;right:5%;width:30%'>删除图片</button>
+
+    
+            
+       <image src="{{item}}" mode='aspectFill' style="width:100%">  </image>
+    
+    </block>
+    <button type="default" bindtap='addImg' style='right:5%;width:30%'>增加图片</button>
+
+
+<text>\n店铺名称：</text>
+<input bindinput="bindNameInput" style='background-color:#eeeeee' value='{{shopInfo.shopName}}'></input>
+
+<text>\n店铺LOGO：</text>
+<!-- <button type="default" id='choose{{index}}' bindtap='chooseImg' style='position:absolute;left:5%;width:30%'>更换图片</button> -->
+<text id='chooseLogo' bindtap='chooseImg' style='color:red;border-style:solid;border-width:2px;border-color:gray'>更换图片</text>
+<text>\n</text>
+
+<image src="{{shopInfo.shopLogo}}" mode='aspectFill' style="width:200rpx;height:200rpx">  </image>
+
+
+<text>\n \n 店铺介绍：</text>
+<!-- <input bindinput="bindIntroInput" style='background-color:#eeeeee;overflow:scroll;height:auto' value='{{shopInfo.shopIntroduce}}'></input> -->
+
+<view class="textarea-wrp">
+        <textarea bindblur="bindIntroInput" placeholder='请在此填写店铺介绍(必填)' style='width:100%;height:200rpx;background-color:#eeeeee;' value='{{shopInfo.shopIntroduce}}' maxlength='-1'/>
+  </view>
+
+
+<text>\n店铺地址：</text>
+<input bindinput="bindAddInput" style='background-color:#eeeeee' value='{{shopInfo.shopAddress}}'></input>
+
+<text>\n联系电话：</text>
+<input bindinput="bindTelInput" style='background-color:#eeeeee' value='{{shopInfo.shopTel}}'></input>
+<text> \n </text>
+
+<view>
+
+ <button type="default" style='margin:10px 30px 10px 30px' bindtap="saveUpload" class="user-button">保存并提交</button>
+ 
+   <navigator url="../shopEdit/shopEdit?shopInfo={{shopInfoStr}}&imgJsonStr={{imgJsonStr}}">
+    
+     </navigator>
+   </view>
+
+</view>

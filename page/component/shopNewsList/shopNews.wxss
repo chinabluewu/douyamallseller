@@ -1,0 +1,28 @@
+/* page/component/shopNews/shopNews.wxss */
+
+.newest-box{
+    padding:0 0rpx;
+    background: #eeeeee;
+}
+.newest-box .newest-list{
+    display: inline-block;
+    width: 100%;
+    
+    margin:4rpx 0 0 0;
+    border-radius: 0px;
+    text-align: left;
+    background: white;
+   
+}
+.newest-box .newest-list:nth-child(2n){
+    margin-right: 0;
+}
+.newest-box .newest-list image{
+    width: 120rpx;
+    height: 120rpx;
+    margin: 20rpx 0 10rpx;
+}
+.newest-box .newest-list .newest-text{
+    font-size: 32rpx;
+    color: dar
+}

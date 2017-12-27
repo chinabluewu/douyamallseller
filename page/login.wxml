@@ -1,0 +1,64 @@
+<!--page/login.wxml-->
+<!--index.wxml-->
+<!-- <view class="container">
+  <view class="userinfo">
+
+    <block wx:if="{{hasUserInfo}}">
+      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
+      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+    </block>
+
+    <button wx:else open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
+    
+     <navigator url='component/index?shopId=10001'> 
+    
+    <button bindtap='loginShop'>进入店铺</button>
+    </navigator>
+
+  </view>
+
+  <view class="usermotto">
+    <text class="user-motto">{{motto}}</text>
+  </view>
+  
+</view> -->
+
+<view class="container"> 
+ <view class="login-icon"> 
+   <!-- <image class="login-img" src="../image/loginLog.jpg"></image>  -->
+ </view> 
+
+
+ <view class="login-from"> 
+  
+ <!--账号-->
+ <view class="inputView"> 
+  <image class="nameImage"  src="../image/name.png"></image> 
+  <label class="loginLab" >账号：</label> 
+  <input class="inputText" type='number' placeholder="请输入手机号" bindinput="phoneInput" /> 
+ </view> 
+ <view class="line"></view> 
+  
+ <!--密码-->
+ <view class="inputView"> 
+  <image class="keyImage" src="../image/key.png"></image> 
+  <label class="loginLab">密码：</label> 
+  <input class="inputText" password="true" placeholder="请输入密码" bindinput="passwordInput" /> 
+ </view> 
+  
+ <!--按钮-->
+ <view class="loginBtnView"> 
+  <button class="loginBtn"  type="primary" size="{{primarySize}}" loading="{{loading}}" plain="{{plain}}" disabled="{{disabled}}" bindtap="login">登录</button> 
+  
+ </view> 
+ <text>\n</text>
+
+ <view style='text-align:center'>
+   <text bindtap='customerService' style='color:gray'>无帐号或无法登录？</text>
+   <!-- <contact-button type="default-dark" size="27"session-from="login"> </contact-button> -->
+   <button size='mini' plain='true' open-type='contact' session-from='login' >联系客服</button>
+ </view>
+ </view> 
+ 
+
+</view>

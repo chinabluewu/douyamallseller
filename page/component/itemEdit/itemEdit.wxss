@@ -1,0 +1,5 @@
+/* page/component/itemEdit/itemEdit.wxss */
+.textarea-wrp {
+    padding: 0 25rpx;
+    background-color: #fff;
+}

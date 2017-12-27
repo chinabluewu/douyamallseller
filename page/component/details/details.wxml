@@ -1,0 +1,55 @@
+<view class="main">
+
+ <view>
+   <navigator url="../itemEdit/itemEdit?op=0&itemInfo={{itemInfoStr}}&imgJsonStr={{imgJsonStr}}">
+     <button type="default" style='margin:10px 30px 10px 30px' bindtap="uploadToCos" class="user-button">编辑商品信息</button>
+     </navigator>
+   </view>
+
+    <view class="goods-box">
+        <!-- <image src="{{goods.image}}" class="goods-thumb"></image> -->
+
+
+    <swiper style="margin-bottom:60rpx" indicator-dots="true" autoplay="true" interval="{{interval}}" duration="{{duration}}" circular="true">
+         <!-- <block wx:for="{{imgUrls}}" wx:key="{{index}}">  -->
+         <block wx:for="{{imgJson}}" wx:key="{{index}}"> 
+            <swiper-item>
+                <image src="{{item}}" style="width:80%;" />
+            </swiper-item>
+        </block>
+    </swiper>
+    
+
+        
+        <navigator open-type="switchTab" url="../cart/cart">
+            <view class="carts-icon {{scaleCart?'on':''}}">
+                <image src="/image/cart2.png"></image>
+                <text class="carts-icon-num" wx:if="{{hasCarts}}">{{totalNum}}</text>
+            </view>
+        </navigator>
+        
+        <view class="goods-operation">
+            <text class="goods-operation-num">数量  {{num}}</text>
+            <text class="goods-operation-add" bindtap="addCount">+</text>
+            <text class="goods-to-cart" bindtap="addToCart">加入购物车</text>
+            <image src="/image/cart1.png"  class="goods-cart-img" bindtap="addToCart"></image>
+        </view>
+        <image wx:if="{{show}}" src="/image/cart1.png" class="to-carts-icon"></image>
+        
+        <view class="goods-title">{{itemInfo.title}}</view>
+        <view class="goods-price">￥ {{itemInfo.price}}</view>
+        <view class="goods-stock">{{itemInfo.stock}}</view>
+    </view>
+
+
+    <view class="goods-tab-box">
+        <view class="goods-tab-nav {{curIndex === 0 ?'on':''}}" bindtap="bindTap" data-index="0">商品详情</view>
+        <view class="goods-tab-nav {{curIndex === 1 ?'on':''}}" bindtap="bindTap" data-index="1">产品参数</view>
+        <view class="goods-tab-nav {{curIndex === 2 ?'on':''}}" bindtap="bindTap" data-index="2">售后保障</view>
+        <view class="goods-content">
+            <view wx:if="{{curIndex === 0}}">{{itemInfo.detail}}</view>
+            <view wx:if="{{curIndex === 1}}">{{itemInfo.parameter}}</view>
+            <view wx:if="{{curIndex === 2}}">{{itemInfo.service}}</view>
+        </view>
+    </view>
+</view>

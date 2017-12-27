@@ -1,0 +1,57 @@
+<!--page/component/itemEdit/itemEdit.wxml-->
+<!--page/component/shopEdit/shopEdit.wxml-->
+<view style='background:#f5f6f5'>
+    <block wx:for="{{imgJson}}" wx:key="{{index}}"> 
+    <button type="default" id='choose{{index}}' bindtap='chooseImg' style='position:absolute;left:5%;width:30%'>更换图片</button>
+       <button type="default" id='delete{{index}}' bindtap='deleteImg' style='position:absolute;right:5%;width:30%'>删除图片</button>
+            
+       <image src="{{item}}" mode='aspectFill' style="width:100%">  </image>
+    
+    </block>
+    <button type="default" bindtap='addImg' style='right:5%;width:30%'>添加图片</button>
+
+
+<text>\n商品标题：</text>
+<input bindinput="bindTitleInput" placeholder='请在此填写商品标题(必填)' style='background-color:white' value='{{itemInfo.title}}'></input>
+
+<text>\n商品价格(元)：</text>
+<input bindinput="bindPriceInput" placeholder='请在此填写商品价格(必填)'  style='background-color:white' value='{{itemInfo.price}}'></input>
+
+<text>\n商品当前状态：</text>
+<input bindinput="bindStockInput" placeholder='请在此填写商品状态(必填)' style='background-color:white' value='{{itemInfo.stock}}'></input>
+
+<text>\n商品详情：</text>
+<!-- <input bindinput="bindDetailInput" placeholder='请在此填写商品详情(必填)'  style='background-color:#eeeeee;overflow:scroll;height:auto' value='{{itemInfo.detail}}'></input> -->
+
+<view class="textarea-wrp">
+        <textarea bindblur="bindDetailInput" placeholder='请在此填写商品详情(必填)' style='height:200rpx;width:100%' value='{{itemInfo.detail}}'  maxlength='-1' />
+  </view>
+
+
+<text>\n相关参数：</text>
+<!-- <input bindinput="bindParameterInput" placeholder='请在此填写商品细节参数(必填)'  style='background-color:#eeeeee' value='{{itemInfo.parameter}}'></input> -->
+
+<view class="textarea-wrp">
+        <textarea bindblur="bindParameterInput" placeholder='请在此填写商品细节参数(必填)' style='height:200rpx;width:100%' value='{{itemInfo.parameter}}'  maxlength='-1' />
+  </view>
+
+<text>\n售后保障：</text>
+<!-- <input bindinput="bindServiceInput" placeholder='请在此填写售后保障(必填)'  style='background-color:#eeeeee' value='{{itemInfo.service}}'></input> -->
+
+<view class="textarea-wrp">
+        <textarea bindblur="bindServiceInput" placeholder='请在此填写售后保障(必填)' style='height:200rpx;width:100%' value='{{itemInfo.service}}' maxlength='-1'/>
+  </view>
+
+<text> \n </text>
+
+<view>
+
+ <button type="default" style='margin:10px 30px 10px 30px' bindtap="saveUpload" class="user-button">保存并提交</button>
+ <text> \n </text>
+ 
+   <navigator url="../shopEdit/shopEdit?shopInfo={{shopInfoStr}}&imgJsonStr={{imgJsonStr}}">
+    
+     </navigator>
+   </view>
+
+</view>

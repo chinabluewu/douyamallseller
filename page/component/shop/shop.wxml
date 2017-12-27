@@ -1,0 +1,47 @@
+<view class="main">
+    <!-- <view class="banner">
+        <image src="/image/list1.png"></image>
+    </view> -->
+ <view>
+   <navigator url="../shopEdit/shopEdit?op=0&shopInfo={{shopInfoStr}}&imgJsonStr={{imgJsonStr}}">
+     <button type="default" style='margin:10px 30px 10px 30px' bindtap="uploadToCos" class="user-button">编辑店铺信息</button>
+     </navigator>
+   </view>
+
+   <swiper indicator-dots="true" autoplay="true" interval="{{interval}}" duration="{{duration}}" circular="true">
+         <!-- <block wx:for="{{imgUrls}}" wx:key="{{index}}">  -->
+         <block wx:for="{{imgJson}}" wx:key="{{index}}"> 
+            <swiper-item>
+                <image src="{{item}}" mode='aspectFill' style="width:100%" />
+            </swiper-item>
+        </block>
+    </swiper>
+    <view style='margin-top:10rpx;background:#eeeeee;height:200rpx'>
+      <image mode='aspectFill' style='height:200rpx;width:200rpx;float:left;border-radius:50%' src='{{shopInfo.shopLogo}}'></image>
+      <text style='font-weight:bold'>{{shopInfo.shopName}}\n</text>
+      <text>联系电话：{{shopInfo.shopTel}}\n</text>
+      <text>店铺地址：{{shopInfo.shopAddress}}\n</text>
+    
+    </view>
+
+    <view class="cate-title" style='border-top:1px solid;border-bottom:1px solid;background:#eeeeee'>
+        <text>{{shopInfo.shopIntroduce}}\n</text>
+        
+     </view>
+
+    <view class="list-box">
+      <block wx:for="{{itemList}}" wx:key="{{index}}"> 
+        <view class="newest-list">
+            <navigator >
+                <image src="{{item.coverImg}}"></image>
+                
+                <view class="newest-text"><text>{{item.title}}</text></view>
+                <view class="newest-text"><text>￥{{item.price}}</text></view>
+            </navigator>
+        </view>
+      </block>
+       
+    </view>
+   
+
+</view>

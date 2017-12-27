@@ -1,0 +1,36 @@
+<!--page/component/newShopNews/newShopNews.wxml-->
+  
+  <!-- <input bindinput="bindTextInput" placeholder='请在此输入文案' style='background-color:#eeeeee;overflow:scroll;height:auto' value='{{itemInfo.title}}'></input> -->
+  <view style='text-align:center'>
+     <text>推广文案</text>
+  </view>
+
+  <view class="textarea-wrp">
+        <textarea bindblur="bindTextInput" placeholder='请在此输入文案' style='height:200rpx;width:100%' auto-focus />
+  </view>
+
+<view>
+    <block wx:for="{{imgJson}}" wx:key="{{index}}"> 
+    <button type="default" id='choose{{index}}' bindtap='chooseImg' style='position:absolute;left:5%;width:30%'>更换图片</button>
+       <button type="default" id='delete{{index}}' bindtap='deleteImg' style='position:absolute;right:5%;width:30%'>删除图片</button>
+            
+       <image src="{{item}}" mode='aspectFill' style="width:100%">  </image>
+    
+    </block>
+    <button type="default" bindtap='addImg' style='right:5%;width:30%'>添加图片</button>
+
+  <text>请选择要推广的商品</text>
+  <input bindinput="bindServiceInput" placeholder=''  style='background-color:white' value='{{itemInfo.service}}'></input>
+  <text> \n </text>
+
+<view>
+
+ <button type="default" style='margin:10px 30px 10px 30px' bindtap="saveUpload" class="user-button">发布</button>
+ <text> \n </text>
+ 
+   <navigator url="../shopEdit/shopEdit?shopInfo={{shopInfoStr}}&imgJsonStr={{imgJsonStr}}">
+    
+     </navigator>
+   </view>
+
+</view>

@@ -1,0 +1,26 @@
+<!--page/component/colorList/colorList.wxml-->
+<!--page/component/itemList/itemList.wxml-->
+
+<loading hidden = "{{hide}}">加载中...</loading>
+    <view class="list-box">
+      
+        <!-- <view class="newest-list">
+            <navigator url="../details/details?itemId=1000100">
+                <image src="../../../image/goods1.png"></image>
+                <view class="newest-text"><text>猕猴桃 3kg</text></view>
+                <view class="newest-text"><text>￥ 0.01</text></view>
+            </navigator>
+        </view> -->
+      <block wx:for="{{itemList}}" wx:key="{{index}}"> 
+        <view class="newest-list">
+            <navigator url="../details/details?itemId={{item.itemId}}"> </navigator>
+                <image bindtap='paintZoom' id='{{index}}' src="{{item.thumbnail}}"></image>
+                
+                <view class="newest-text"><text>{{item.user_name}}\n</text></view>
+                <view class="newest-text"><text>{{item.createTime}}</text></view>
+            
+        </view>
+      </block>
+       
+       
+    </view>

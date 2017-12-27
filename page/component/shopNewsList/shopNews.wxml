@@ -1,0 +1,57 @@
+<!--page/component/shopNews/shopNews.wxml-->
+
+
+ <view>
+   <navigator url="../newShopNews/newShopNews">
+     <button type="default" style='margin:10px 30px 10px 30px' bindtap="uploadToCos" class="user-button">发布新动态</button>
+     </navigator>
+   </view>
+
+<view class="newest-box">
+
+    <block wx:for="{{shopNewsList}}" wx:for-index="index1"> 
+    <view class="newest-list">
+
+        <!-- <navigator url="shop/shop?shopId={{item.shopId}}">
+
+          <image style='margin:10rpx;float:left' src="{{item.shopLogo}}"></image>
+        </navigator>  -->
+       <view style='float:left;margin-top:20rpx'>
+        <text style='font-size:20px;font-weight:bold'>{{item.date}}</text>
+        <text>\n{{item.time}}</text>
+        
+       </view>
+    
+        <view style='margin:20rpx 20rpx 20rpx 140rpx' >
+            <!-- <text style='color:darkblue'>{{item.shopName}}\n</text> -->
+            
+            <text style=''>{{item.newsText}}</text>
+
+          <scroll-view class="scroll-view_H" scroll-x style="background:#f5f6f5">
+          
+          <view  >
+          <block  wx:for="{{newsImgsList[index1]}}" wx:for-index="index2">                
+          <image id='{{index1}}:{{index2}}' bindtap='newsImgZoom' mode='aspectFill' style='margin-right:10rpx' src="{{item}}"></image>
+
+          </block>
+          </view> 
+
+        </scroll-view> 
+        
+            <navigator url="../details/details?itemId={{item.itemId}}">
+            <text style=' margin-top:10rpx;color:darkorange'> {{item.itemTitle}} </text>
+            </navigator>
+            <text id='{{index1}}' bindtap='delShopNews' style='color:darkblue'>删除</text>
+            
+        
+      </view> 
+    </view>
+    
+    </block> 
+
+           <view style='text-align:center'>
+            <text >已经到底部啦</text>
+           </view> 
+
+</view>    
+

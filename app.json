@@ -1,0 +1,59 @@
+{
+  "pages": [
+    "page/component/index",
+    "page/component/category/category",
+    "page/component/cart/cart",
+    "page/component/user/user",
+    "page/component/address/address",
+    "page/component/orders/orders",
+    "page/component/details/details",
+    "page/component/shop/shop",
+    "page/login",
+    "page/component/shopEdit/shopEdit",
+    "page/component/itemList/itemList",
+    "page/component/itemEdit/itemEdit",
+    "page/component/shopNewsList/shopNews",
+    "page/component/newShopNews/newShopNews",
+    "page/component/colorList/colorList"
+  ],
+  "window": {
+    "navigationBarTextStyle": "#ffffff",
+    "navigationBarTitleText": "豆芽商城卖家版",
+    "navigationBarBackgroundColor": "#AB956D",
+    "backgroundColor": "#eeeeee",
+    "enablePullDownRefresh": true
+  },
+  "tabBar": {
+    "color": "#b7b7b7",
+    "selectedColor": "#AB956D",
+    "borderStyle": "#f5f5f5",
+    "backgroundColor": "#f5f5f5",
+    "list": [
+      {
+        "pagePath": "page/component/index",
+        "iconPath": "image/12.png",
+        "selectedIconPath": "image/11.png",
+        "text": "首页"
+      },
+      {
+        "pagePath": "page/component/colorList/colorList",
+        "iconPath": "image/32.png",
+        "selectedIconPath": "image/31.png",
+        "text": "发现"
+      },
+      {
+        "pagePath": "page/component/user/user",
+        "iconPath": "image/42.png",
+        "selectedIconPath": "image/41.png",
+        "text": "我的"
+      }
+    ]
+  },
+  "networkTimeout": {
+    "request": 6000,
+    "connectSocket": 10000,
+    "uploadFile": 10000,
+    "downloadFile": 10000
+  },
+  "debug": false
+}

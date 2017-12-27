@@ -1,0 +1,27 @@
+<!--page/component/itemList/itemList.wxml-->
+
+<loading hidden = "{{hide}}">加载中...</loading>
+    <view class="list-box">
+      
+        <!-- <view class="newest-list">
+            <navigator url="../details/details?itemId=1000100">
+                <image src="../../../image/goods1.png"></image>
+                <view class="newest-text"><text>猕猴桃 3kg</text></view>
+                <view class="newest-text"><text>￥ 0.01</text></view>
+            </navigator>
+        </view> -->
+      <block wx:for="{{itemList}}" wx:key="{{index}}"> 
+        <view class="newest-list">
+            <navigator url="../details/details?itemId={{item.itemId}}">
+                <image src="{{item.coverImg}}"></image>
+                
+                <view class="newest-text"><text>{{item.title}}</text></view>
+                <view class="newest-text"><text>￥{{item.price}}</text></view>
+            </navigator>
+        </view>
+      </block>
+       
+       <navigator url="../itemEdit/itemEdit?op=1&shopItemIds={{shopItemIds}}">
+          <button type="default" bindtap='addItem' style='right:5%;width:50%'>增加商品</button>
+       </navigator>
+    </view>
